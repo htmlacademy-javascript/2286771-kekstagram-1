@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Инна Ладыженская](https://up.htmlacademy.ru/javascript-individual/1/user/2286771).
-* Наставник: `Неизвестно`.
+* Наставник: [Анна Лисененкова](https://htmlacademy.ru/profile/ankhena).
 
 ---
 
