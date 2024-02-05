@@ -1,5 +1,6 @@
 
 const isPalindrom = function (string) {
+  string = string.replaceAll(' ', '').toLowerCase();
   for (let i = 0; i <= string.length; i++) {
     if (string.at(i) !== string.at(-i - 1)) {
       return 'Не палиндром';
@@ -8,7 +9,7 @@ const isPalindrom = function (string) {
   return 'Палиндром';
 };
 
-console.log(isPalindrom('каюк'));
+console.log(isPalindrom('Лёша на полке клопа нашёл '));
 
 const isNumber = function (string) {
   let result = '';
@@ -52,3 +53,21 @@ createNewString('q', 4, 'werty');
 
 console.log(createNewString('q', 4, 'werty'));
 
+const checkLength = function (string, maxlength) {
+  if (string.length <= maxlength) {
+    return true;
+  }
+  return false;
+};
+checkLength('Кекстаграм12345678', 10);
+
+console.log(checkLength('Кекстаграм12345678', 10));
+
+
+const checkLength = function (string, maxlength) {
+  return string.length <= maxlength;
+};
+
+checkLength('Кекстаграм12345678', 10);
+
+console.log(checkLength('Кекстаграм12345678', 10));
