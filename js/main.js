@@ -61,11 +61,10 @@ function getRandomIdfromRangeGenerator(min, max) {
     while (previousValues.includes(currentValue)) {
       currentValue = getRandomIntInclusive(min, max);
     }
-    previousValues.includes(currentValue);
+    previousValues.push(currentValue);
     return currentValue;
   };
 }
-getRandomIdfromRangeGenerator();
 
 function createIdGenerator() {
   {
@@ -77,22 +76,20 @@ function createIdGenerator() {
   }
 }
 
-const generatePhotoId = createIdGenerator();
-const generateUrlId = createIdGenerator();
+const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
+const generateUrlId = getRandomIdfromRangeGenerator(1, 25);
 const generateLikesId = getRandomIdfromRangeGenerator(15, 200);
 const generateCommentsId = createIdGenerator();
-const randomMessagesIndex = getRandomIdfromRangeGenerator(0, MESSAGES.length - 1);
-
 
 const createComments = function () {
   const randomNamesIndex = getRandomIntInclusive(0, NAMES.length - 1);
-
+  const randomMessagesIndex = getRandomIntInclusive(0, MESSAGES.length - 1);
 
   return {
     id: generateCommentsId(),
     name: NAMES[randomNamesIndex],
     messages: MESSAGES[randomMessagesIndex],
-    avatar: '',
+    avatar: 'img/avatar-' + getRandomIntInclusive(1,6) + '.svg',
   };
 };
 
