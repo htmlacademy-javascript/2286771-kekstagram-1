@@ -1,5 +1,5 @@
 
-const isPalindrom = function (string) {
+const isPalindrome = function (string) {
   string = string.replaceAll(' ', '').toLowerCase();
   for (let i = 0; i <= string.length; i++) {
     if (string.at(i) !== string.at(-i - 1)) {
@@ -9,7 +9,7 @@ const isPalindrom = function (string) {
   return 'Палиндром';
 };
 
-console.log(isPalindrom('Лёша на полке клопа нашёл '));
+console.log(isPalindrome('Лёша на полке клопа нашёл '));
 
 const isNumber = function (string) {
   let result = '';
@@ -64,10 +64,10 @@ checkLength('Кекстаграм12345678', 10);
 console.log(checkLength('Кекстаграм12345678', 10));
 
 
-const checkLength = function (string, maxlength) {
+const checkLengthTwo = function (string, maxlength) {
   return string.length <= maxlength;
 };
 
-checkLength('Кекстаграм12345678', 10);
+checkLengthTwo('Кекстаграм12345678', 10);
 
-console.log(checkLength('Кекстаграм12345678', 10));
+console.log(checkLengthTwo('Кекстаграм12345678', 10));
