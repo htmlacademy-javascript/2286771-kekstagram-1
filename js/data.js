@@ -54,7 +54,7 @@ const createComments = function () {
     id: generateCommentsId(),
     name: NAMES[randomNamesIndex],
     messages: MESSAGES[randomMessagesIndex],
-    avatar: 'img/avatar-' + getRandomIntInclusive(1,6) + '.svg',
+    avatar: `img/avatar-${getRandomIntInclusive(1,6)}.svg`,
   };
 };
 
@@ -65,7 +65,7 @@ const createPhotoDescription = () => {
 
   return {
     id: generatePhotoId(),
-    url: 'photos/' + generateUrlId() + '.jpg',
+    url: `photos/${generateUrlId()}.jpg`,
     description: DESCRIPTION[randomDescriptionIndex],
     likes: generateLikesId(),
     comments: newArray,
