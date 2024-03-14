@@ -1,14 +1,13 @@
-import {createPhotoDescriptions} from './data.js';
+import { createPhotoDescriptions } from './data.js';
 
 const pictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
-
 
 const photoDescriptions = createPhotoDescriptions();
 
 const picturesFragment = document.createDocumentFragment();
 
-photoDescriptions.forEach(({url, likes, comments}) => {
+photoDescriptions.forEach(({ url, likes, comments }) => {
   const userPicture = pictureTemplate.cloneNode(true);
   pictures.appendChild(userPicture);
   userPicture.querySelector('.picture__img').src = url;

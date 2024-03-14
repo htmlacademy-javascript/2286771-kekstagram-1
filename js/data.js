@@ -1,5 +1,5 @@
-import {getRandomIntInclusive} from './util.js';
-import {getRandomIdfromRangeGenerator} from './util.js';
+import { getRandomIntInclusive } from './util.js';
+import { getRandomIdfromRangeGenerator } from './util.js';
 
 const DESCRIPTION = [
   'Волга',
@@ -41,8 +41,6 @@ function createIdGenerator() {
   }
 }
 
-const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
-const generateUrlId = getRandomIdfromRangeGenerator(1, 25);
 const generateLikesId = getRandomIdfromRangeGenerator(15, 200);
 const generateCommentsId = createIdGenerator();
 
@@ -54,15 +52,16 @@ const createComments = function () {
     id: generateCommentsId(),
     name: NAMES[randomNamesIndex],
     messages: MESSAGES[randomMessagesIndex],
-    avatar: `img/avatar-${getRandomIntInclusive(1,6)}.svg`,
+    avatar: `img/avatar-${getRandomIntInclusive(1, 6)}.svg`,
   };
 };
 
 
 const createPhotoDescription = () => {
   const randomDescriptionIndex = getRandomIntInclusive(0, DESCRIPTION.length - 1);
-  const newArray = Array.from({length: 6}, createComments);
-
+  const newArray = Array.from({ length: 6 }, createComments);
+  const generateUrlId = getRandomIdfromRangeGenerator(1, 25);
+  const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
   return {
     id: generatePhotoId(),
     url: `photos/${generateUrlId()}.jpg`,
@@ -77,5 +76,5 @@ for (let i = 0; i <= 24; i++) {
   console.log(createPhotoDescription());
 }
 
-const createPhotoDescriptions = () => Array.from({length: 25}, createPhotoDescription);
-export {createPhotoDescriptions};
+const createPhotoDescriptions = () => Array.from({ length: 25 }, createPhotoDescription);
+export { createPhotoDescriptions };
