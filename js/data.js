@@ -77,4 +77,5 @@ for (let i = 0; i <= 24; i++) {
   console.log(createPhotoDescription());
 }
 
-export {createPhotoDescription};
+const createPhotoDescriptions = () => Array.from({length: 25}, createPhotoDescription);
+export {createPhotoDescriptions};
