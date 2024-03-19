@@ -60,8 +60,15 @@ const createComments = function () {
 const createPhotoDescription = () => {
   const randomDescriptionIndex = getRandomIntInclusive(0, DESCRIPTION.length - 1);
   const newArray = Array.from({ length: 6 }, createComments);
-  const generateUrlId = getRandomIdfromRangeGenerator(1, 25);
+  const randomArray = [];
+  const arrayLength = 25;
+  for (let i = 0; i < arrayLength; i++) {
+    randomArray.push(getRandomIdfromRangeGenerator(1, 25));
+  }
+  const generateUrlId = randomArray.forEach;
+
   const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
+
   return {
     id: generatePhotoId(),
     url: `photos/${generateUrlId()}.jpg`,
