@@ -56,18 +56,12 @@ const createComments = function () {
   };
 };
 
+const generateUrlId = getRandomIdfromRangeGenerator(1, 25);
+const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
 
 const createPhotoDescription = () => {
   const randomDescriptionIndex = getRandomIntInclusive(0, DESCRIPTION.length - 1);
   const newArray = Array.from({ length: 6 }, createComments);
-  const randomArray = [];
-  const arrayLength = 25;
-  for (let i = 0; i < arrayLength; i++) {
-    randomArray.push(getRandomIdfromRangeGenerator(1, 25));
-  }
-  const generateUrlId = randomArray.forEach;
-
-  const generatePhotoId = getRandomIdfromRangeGenerator(1, 25);
 
   return {
     id: generatePhotoId(),
@@ -77,11 +71,6 @@ const createPhotoDescription = () => {
     comments: newArray,
   };
 };
-
-
-for (let i = 0; i <= 24; i++) {
-  console.log(createPhotoDescription());
-}
 
 const createPhotoDescriptions = () => Array.from({ length: 25 }, createPhotoDescription);
 export { createPhotoDescriptions };
