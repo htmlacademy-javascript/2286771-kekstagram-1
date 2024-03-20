@@ -1,3 +1,5 @@
-import {createPhotoDescription} from './data.js';
+import {createPhotoDescriptions} from './data.js';
 import './util.js';
-createPhotoDescription();
+createPhotoDescriptions();
+import {appendChild} from './paint.js';
+appendChild();
